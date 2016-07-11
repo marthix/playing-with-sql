@@ -66,7 +66,7 @@ Simulate buying an item by inserting a User for yourself and an Order for that U
 What item was ordered most often? Grossed the most money?
 - **Incredible Granite Car and Rustic Steel Shirt with 72 orders**
 - `SELECT items.title, SUM(orders.quantity) FROM orders INNER JOIN items WHERE items.id = orders.item_id GROUP BY items.title ORDER BY SUM(orders.quantity) DESC;`
-- **Incredible Granite Car**
+- **Incredible Granite Car with $525,240**
 - `SELECT items.title, SUM(orders.quantity * items.price) FROM orders INNER JOIN items WHERE items.id = orders.item_id GROUP BY items.id ORDER BY SUM(orders.quantity * items.price) DESC;`
 
 ---

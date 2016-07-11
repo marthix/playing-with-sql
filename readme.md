@@ -57,16 +57,24 @@ How much was spent on books?
 
 Simulate buying an item by inserting a User for yourself and an Order for that User.
 - `INSERT INTO users VALUES (null, 'Jason', 'Lestina', 'me@gmail.com');`
-- `INSERT INTO orders VALUES (null, 51, 19, 19, '2016-07-11 15:30:30.324325');`
+- `INSERT INTO orders VALUES (null, 51, 19, 19, datetime());`
 ---
 
 #Adventure Mode
 
 What item was ordered most often? Grossed the most money?
+- **Incredible Granite Car and Rustic Steel Shirt with 72 orders**
+- ```SELECT items.title, SUM(orders.quantity) FROM orders INNER JOIN items WHERE items.id = orders.item_id GROUP BY items.title ORDER BY SUM(orders.quantity) DESC;```
+- **Incredible Granite Car**
+- ```SELECT items.title, SUM(orders.quantity * items.price) FROM orders INNER JOIN items WHERE items.id = orders.item_id GROUP BY items.id ORDER BY SUM(orders.quantity * items.price) DESC;```
 
 ---
 
 What user spent the most?
+- ****
+- `SELECT users.first_name || ' ' || users.last_name AS name, SUM(orders.quantity), items.price, SUM(orders.quantity * items.price) FROM users INNER JOIN orders ON users.id = orders.user_id INNER JOIN items ON items.id = orders.item_id GROUP BY users.id;`
+
+
 
 ---
 

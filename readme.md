@@ -2,7 +2,7 @@
 
 How many users are there?
 - **50**
-- `SELECT COUNT(*) FROM users;`
+`SELECT COUNT(*) FROM users;`
 
 ---
 

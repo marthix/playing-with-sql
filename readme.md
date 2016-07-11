@@ -1,7 +1,7 @@
 #Explorer Mode
 How many users are there? **50**
 -    `SELECT COUNT(*) FROM users`
-
+---
 What are the 5 most expensive items?
 
 What's the cheapest book? (Does that change for "category is exactly 'book'" versus "category contains 'book'"?)

@@ -1,6 +1,6 @@
 #Explorer Mode
-How many users are there?
-- asdf
+How many users are there? *50*
+- SELECT COUNT(*) FROM users
 
 What are the 5 most expensive items?
 
